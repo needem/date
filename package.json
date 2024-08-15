@@ -1,6 +1,6 @@
 {
   "name": "@needem/date",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "DateTime formatter",
   "main": "src/index.mjs",
   "scripts": {
