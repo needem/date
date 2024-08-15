@@ -109,6 +109,10 @@ export class Formatter {
 		})
 	}
 
+	toString() {
+		return this.#locale
+	}
+
 	#validate(v, schema = CONFIG) {
 		let valid = this.#ajv.validate(schema, v)
 		if(!valid) {

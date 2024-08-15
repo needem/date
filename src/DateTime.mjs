@@ -121,6 +121,20 @@ export class DateTime {
 		return this
 	}
 
+	current() {
+		if(Object.keys(this.#formatters).length === 0) {
+			throw new Error('no formatters found')
+		}
+
+		const formatter = this.#formatters[this.#activeFormatter]
+
+		if(!formatter) {
+			throw new Error('invalid formatter')
+		}
+
+		return formatter
+	}
+
 	flash(name) {
 		if(!this.#formatters[name]) {
 			throw new Error('invalid formatter')

@@ -3,6 +3,7 @@ import { it } from 'node:test'
 import { before } from 'node:test'
 import assert from 'node:assert/strict'
 import { DateTime } from './DateTime.mjs'
+import { Formatter } from './Formatter.mjs'
 
 const now = new Date('2024-05-21T20:49:14.423Z')
 
@@ -55,6 +56,13 @@ describe('DateTime', () => {
         assert.equal(d.flash('belgium-full').format(now, {
             withDate: false
         }), '10:49:14,423 PM MESZ')
+    })
+
+    it('should get current', () => {
+        d.init(CONFIG)
+        d.use('belgium-full')
+        assert.ok(d.current() instanceof Formatter)
+        assert.equal(''+d.current(), 'de-BE')
     })
 
     it('should override withMilli', () => {
