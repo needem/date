@@ -80,7 +80,7 @@ export class DateTime {
 	}
 
 	/**
-	 * Add a new currency.
+	 * Add a new date formatter
 	 * 
 	 * @param {object}  config
 	 * @param [string]  config.name  A name to use as an alias (default: whatever locale is)
